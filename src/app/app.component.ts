@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  item = '';
+  items:string[] = [];
+
+  add():void{
+    if(this.item){
+     this.items.push(this.item);
+     this.item = '';
+    }
+  }
 }
