@@ -8,8 +8,8 @@
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let item of items">
       <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">{{item}}</label>
+        <input type="checkbox" class="form-check-input" id="exampleCheck1"  [(ngModel)]="isChecked" >
+        <label [ngClass]="{'strike-through':isChecked}" class="form-check-label" for="exampleCheck1">{{item}}</label>
       </div>
     </li>
   </ul>
