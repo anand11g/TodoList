@@ -44,6 +44,7 @@ export class AppComponent {
     }
   }
 
+  //Get in completed task count
   getInCompletedTodo(){
     let inCompleted = this.todos.filter(item => item.completed == false);
     this.itemLeft= inCompleted.length;
