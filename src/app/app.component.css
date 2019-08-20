@@ -15,7 +15,7 @@
  
 
   .todos .delete-icon {
-    diplay: inline-block;
+    display: inline-block;
     cursor: pointer;
   }  
   
