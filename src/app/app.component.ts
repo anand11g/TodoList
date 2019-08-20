@@ -24,14 +24,14 @@ export class AppComponent {
     }
     this.todos.push(this.todoObj);
     this.newTodo = '';
-    this.getUnCompletedTodo();
+    this.getInCompletedTodo();
     event.preventDefault();
   }
 
 
   deleteTodo(index:number):void {
     this.todos.splice(index, 1);
-    this.getUnCompletedTodo();
+    this.getInCompletedTodo();
   }
 
 
@@ -44,7 +44,7 @@ export class AppComponent {
     }
   }
 
-  getUnCompletedTodo(){
+  getInCompletedTodo(){
     let inCompleted = this.todos.filter(item => item.completed == false);
     this.itemLeft= inCompleted.length;
   }

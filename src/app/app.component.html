@@ -11,7 +11,7 @@
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let todo of todos; let i=index">
       <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input"  id="{{'customCheck'+i}}" [(ngModel)]="todo.completed" (change)="getUnCompletedTodo()"/>
+        <input type="checkbox" class="custom-control-input"  id="{{'customCheck'+i}}" [(ngModel)]="todo.completed" (change)="getInCompletedTodo()"/>
         <label class="custom-control-label"  for="{{'customCheck'+i}}" [ngClass]="{'checked': todo.completed}">{{ todo.newTodo }}</label>
         <span (click)="deleteTodo(i)" class="delete-icon">[X]</span>
       </div>
