@@ -1,0 +1,21 @@
+  
+
+  .todos input.textfield {
+    width: 480px;
+    height: 36px;
+    margin-right: 20px;
+    font-size: 1.4em;
+    vertical-align: top;
+  }
+
+ 
+  .todos .checked {
+    text-decoration: line-through;
+  }
+ 
+
+  .todos .delete-icon {
+    diplay: inline-block;
+    cursor: pointer;
+  }  
+  
