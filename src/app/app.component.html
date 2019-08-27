@@ -9,16 +9,28 @@
     </div>
   </li>
   <ul class="list-group">
-    <li class="list-group-item" *ngFor="let todo of todos; let i=index">
+    <li class="list-group-item" *ngFor="let todo of getAllTodos() ; let i=index">
       <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input"  id="{{'customCheck'+i}}" [(ngModel)]="todo.completed" (change)="getInCompletedTodo()"/>
-        <label class="custom-control-label"  for="{{'customCheck'+i}}" [ngClass]="{'checked': todo.completed}">{{ todo.newTodo }}</label>
+        <input type="checkbox" class="custom-control-input"  id="{{'customCheck'+i}}" [(ngModel)]="todo.completed"/>
+        <label class="custom-control-label"  for="{{'customCheck'+i}}" [ngClass]="{'checked': todo.completed}">{{ todo.name }}</label>
         <span (click)="deleteTodo(i)" class="delete-icon">[X]</span>
       </div>
     </li>
   </ul>
 
   <li class="list-group-item">
-    <span>{{itemLeft}}</span> item left. &nbsp;&nbsp;&nbsp;<button (click)="deleteSelectedTodos()">Delete Selected</button>
+    <span>{{getInCompletedTodo()}}</span> item left. &nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-primary" (click)="deleteSelectedTodos()">Delete Selected</button>
+   <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option1" (click)="filterItem('all')" autocomplete="off"> All
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option2" (click)="filterItem(1)" autocomplete="off"> Completed
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option3" (click)="filterItem(0)" autocomplete="off"> Not Completed
+      </label>
+    </div>
   </li>
+  
 </div>
