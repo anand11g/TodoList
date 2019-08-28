@@ -11,8 +11,8 @@ export class DataServiceService {
 
   constructor() {
     let sampleData = [
-      { name: "Hello", completed: false },
-      { name: "World", completed: false }];
+      { name: "Book ticket for night show", completed: false },
+      { name: "Buy vegetables", completed: false }];
 
     sampleData.forEach(e => this.todos.push(e)); 
     this.filterItems = this.todos.slice(0);
@@ -37,6 +37,7 @@ export class DataServiceService {
     for (var i = (this.todos.length - 1); i > -1; i--) {
       if (this.todos[i].completed) {
         this.todos.splice(i, 1);
+        this.filterItems = this.todos.slice(0);
       }
     }
   }
